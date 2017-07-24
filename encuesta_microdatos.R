@@ -17,3 +17,11 @@ x[c(FALSE, TRUE, FALSE, FALSE)] <- b
 x[c(FALSE, FALSE, TRUE, FALSE)] <- c
 x[c(FALSE, FALSE, FALSE, TRUE)] <- d
 
+muchas = x[1:71]
+
+if (!require(foreign)) install.packages("foreign")
+if (!require(data.table)) install.packages("data.table")
+
+varias = lapply(muchas, function(x) read.spss(x, use.value.labels = FALSE))
+
+
